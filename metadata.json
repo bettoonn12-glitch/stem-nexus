@@ -1,0 +1,6 @@
+{
+  "name": "STEM Nexus Interactive",
+  "description": "Interactive educational platform combining Mathematics, Science, and ICT through hands-on scenario-based challenges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

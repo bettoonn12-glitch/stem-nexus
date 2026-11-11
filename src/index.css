@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Fredoka', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+.font-game {
+  font-family: 'Fredoka', cursive, sans-serif;
+}
+
+.font-tech {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+/* Custom retro scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f2757;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 9999px;
+  border: 2px solid #0f2757;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+}
+
+/* Frutiger Aero / Glossy Candy Gradients & Borders */
+.aero-window {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(200, 230, 255, 0.12) 30%, rgba(15, 38, 88, 0.85) 100%), #143575;
+  box-shadow: 0 12px 36px rgba(4, 15, 45, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.7), inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+  border: 2px solid #5aa5ff;
+}
+
+.aero-glass-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(13, 35, 78, 0.65) 100%), #13346d;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 4px 12px rgba(3, 10, 30, 0.35);
+  border: 1.5px solid rgba(138, 196, 255, 0.6);
+}
+
+.aero-button {
+  background: linear-gradient(180deg, #6ec3ff 0%, #3082f6 48%, #1d5ed8 52%, #2b7af4 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -2px 0 rgba(10, 40, 110, 0.6);
+  border: 1px solid #7bc6ff;
+  transition: all 0.15s ease-out;
+}
+
+.aero-button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.aero-button:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes floatBubble {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-20vh) translateX(30px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes cloudDrift {
+  0% {
+    transform: translateX(-15%);
+  }
+  50% {
+    transform: translateX(15%);
+  }
+  100% {
+    transform: translateX(-15%);
+  }
+}
+
+@keyframes sleepZzz {
+  0% {
+    transform: translate(0, 0) scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(16px, -24px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes mascotBob {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(1.5deg);
+  }
+}
+
+@keyframes dogBreathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03) translateY(-1px);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-float-bubble {
+  animation: floatBubble 14s linear infinite;
+}
+
+.animate-mascot-bob {
+  animation: mascotBob 3.5s ease-in-out infinite;
+}
+
+.animate-dog-breathe {
+  animation: dogBreathe 4s ease-in-out infinite;
+}
+
+.animate-zzz-1 {
+  animation: sleepZzz 3s ease-out infinite;
+}
+.animate-zzz-2 {
+  animation: sleepZzz 3s ease-out infinite 1s;
+}
+.animate-zzz-3 {
+  animation: sleepZzz 3s ease-out infinite 2s;
+}
+
+.animate-cloud-drift-slow {
+  animation: cloudDrift 90s ease-in-out infinite alternate;
+}
+.animate-cloud-drift-fast {
+  animation: cloudDrift 50s ease-in-out infinite alternate;
+}
+
+/* Lively Hover Animations for Buttons & Images */
+button:not(:disabled) {
+  transition: transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.16s ease-out;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1.5px) scale(1.02);
+}
+
+button:not(:disabled):active {
+  transform: translateY(1px) scale(0.97);
+}
+
+img {
+  transition: transform 0.25s ease-out, filter 0.25s ease-out;
+}
+
+img:hover {
+  filter: brightness(1.05);
+}
